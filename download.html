@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mexzyy Free: pobierz</title>
+<meta name="theme-color" content="#0b0713">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#0b0713;--text:#f5f1ff;--muted:#9a93b4;--line:rgba(255,255,255,.1);--grad:linear-gradient(135deg,#ff3d9a,#7b5cff)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(900px 520px at 88% -10%,#4a22a066,transparent),radial-gradient(700px 520px at -10% 110%,#ff3d9a30,transparent),var(--bg);color:var(--text);font:16px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;display:flex;justify-content:center;padding:32px 16px}
+main{width:100%;max-width:520px;display:flex;flex-direction:column;gap:14px}
+.logo{width:84px;height:84px;border-radius:50%;margin:8px auto 0;display:block;box-shadow:0 0 34px #ff3d9a66}
+h1{text-align:center;font-size:34px;letter-spacing:-.8px;margin:6px 0 0}
+p.sub{text-align:center;color:var(--muted);margin:0 0 8px}
+.card{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:19px}
+.card p,.card ol{margin:0;color:var(--muted);font-size:14px}
+.card ol{padding-left:18px}
+.btn{display:block;text-align:center;text-decoration:none;color:#fff;background:var(--grad);font-weight:700;padding:13px 18px;border-radius:999px;box-shadow:0 8px 22px #ff3d9a44}
+.btn.alt{background:rgba(255,255,255,.1);box-shadow:none;border:1px solid var(--line)}
+.first{order:-1}
+</style>
+</head>
+<body>
+<main>
+ <img class="logo" src="icon-192.png" alt="">
+ <h1>Mexzyy Free</h1>
+ <p class="sub">Twoja muzyka, Twoje playlisty, bez reklam.</p>
+
+ <section class="card" id="android">
+  <h2>Android</h2>
+  <a class="btn" href="Mexzyy-Free.apk" download>Pobierz aplikację (.apk)</a>
+  <ol>
+   <li>Otwórz pobrany plik.</li>
+   <li>Zezwól przeglądarce na instalację z tego źródła.</li>
+   <li>Jeśli Play Protect ostrzeże, wybierz „Zainstaluj mimo to”.</li>
+  </ol>
+ </section>
+
+ <section class="card" id="web">
+  <h2>Telefon: instalacja z przeglądarki</h2>
+  <a class="btn alt" href="app/">Otwórz wersję w przeglądarce</a>
+  <p>Android (Chrome): menu, potem „Zainstaluj aplikację”. iPhone (Safari): Udostępnij, potem „Dodaj do ekranu początkowego”. Działa też na iPhonie, gdzie plik .apk nie zadziała.</p>
+ </section>
+
+ <section class="card" id="win">
+  <h2>Windows</h2>
+  <a class="btn" href="Mexzyy-Free.exe" download>Pobierz dla Windowsa (.exe)</a>
+  <p>Wersja przenośna, działa bez instalacji. Jeśli pojawi się SmartScreen: „Więcej informacji”, potem „Uruchom mimo to”.</p>
+ </section>
+</main>
+<script>
+const ua = navigator.userAgent;
+if (/Android/i.test(ua)) document.getElementById('android').classList.add('first');
+else if (/iPhone|iPad/i.test(ua)) document.getElementById('web').classList.add('first');
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+MEXZYY FREE - STRONA Z POBIERANIEM (APK + EXE)
+
+GitHub sam zbuduje aplikacje na Androida (.apk) i Windowsa (.exe) i zrobi
+strone z przyciskami "Pobierz". Nie instalujesz nic na komputerze.
+
+1. Konto na https://github.com -> New repository, nazwa: mexzyy-free, Public.
+2. "uploading an existing file": przeciagnij TU WSZYSTKO z tego folderu
+   (razem z folderem .github, ale BEZ node_modules i dist) -> Commit changes.
+   Jesli .github sie nie wgral: Add file -> Create new file, nazwa
+   .github/workflows/build.yml i wklej tresc pliku build.yml.
+3. Settings -> Pages -> Source: "GitHub Actions".
+4. Zakladka Actions: poczekaj 10-15 minut na zielone znaczki.
+   Czerwony przy "Wersja na Androida" = APK sie nie zbudowalo; reszta dziala.
+   Wyslij mi wtedy tekst bledu.
+5. Twoja strona: https://TWOJA-NAZWA.github.io/mexzyy-free/
+   Otworz ja na telefonie i kliknij "Pobierz aplikacje (.apk)".
+
+UWAGA: muzyka i playlisty zapisuja sie osobno na kazdym urzadzeniu.

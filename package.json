@@ -1,0 +1,32 @@
+{
+  "name": "mexzyy-free",
+  "version": "1.0.0",
+  "description": "Mexzyy Free - odtwarzacz własnej muzyki",
+  "main": "main.js",
+  "author": "Mexzyy",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.mexzyy.free",
+    "productName": "Mexzyy Free",
+    "files": [
+      "main.js",
+      "index.html",
+      "icon-512.png",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    }
+  }
+}
