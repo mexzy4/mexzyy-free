@@ -12,25 +12,25 @@
 <link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-:root{--bg:#0b0713;--panel:rgba(255,255,255,.045);--panel2:rgba(255,255,255,.09);--text:#f5f1ff;--muted:#9a93b4;--a1:#ff3d9a;--a2:#7b5cff;--accent:#ff4fa3;--line:rgba(255,255,255,.1);--grad:linear-gradient(135deg,var(--a1),var(--a2))}
+:root{--bg:#0b0713;--fg:#f5f1ff;--text:var(--fg);--a1:#ff3d9a;--a2:#7b5cff;--on:#fff;--accent:var(--a1);--panel:color-mix(in srgb,var(--fg) 5%,transparent);--panel2:color-mix(in srgb,var(--fg) 9%,transparent);--line:color-mix(in srgb,var(--fg) 11%,transparent);--muted:color-mix(in srgb,var(--fg) 58%,var(--bg));--pop:color-mix(in srgb,var(--bg) 90%,var(--fg));--acct:color-mix(in srgb,var(--a1) 65%,var(--fg));--grad:linear-gradient(135deg,var(--a1),var(--a2))}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
-body{background:radial-gradient(900px 520px at 88% -10%,#4a22a066,transparent),radial-gradient(700px 520px at -10% 110%,#ff3d9a30,transparent),var(--bg);background-attachment:fixed;color:var(--text);font:14px/1.45 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:radial-gradient(900px 520px at 88% -10%,color-mix(in srgb,var(--a2) 32%,transparent),transparent),radial-gradient(700px 520px at -10% 110%,color-mix(in srgb,var(--a1) 19%,transparent),transparent),var(--bg);background-attachment:fixed;color:var(--text);font:14px/1.45 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
 button,input{font:inherit;color:inherit}
 button{background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .app{display:grid;grid-template-columns:250px 1fr;grid-template-rows:1fr auto;grid-template-areas:"side main" "bar bar";height:100%}
-aside{grid-area:side;background:rgba(255,255,255,.03);border-right:1px solid var(--line);padding:20px 12px;overflow:auto}
+aside{grid-area:side;background:color-mix(in srgb,var(--fg) 3%,transparent);border-right:1px solid var(--line);padding:20px 12px;overflow:auto}
 .brand{display:flex;align-items:center;font-size:21px;font-weight:800;letter-spacing:-.4px;padding:0 10px 20px}
 .brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-left:6px}
 .logo{width:28px;height:28px;border-radius:50%;margin-right:10px;background:radial-gradient(circle,var(--bg) 0 3px,#fff 4px 5px,transparent 6px),conic-gradient(var(--a1),var(--a2),var(--a1),var(--a2),var(--a1))}
 nav{display:flex;flex-direction:column;gap:3px}
 .nav{display:flex;justify-content:space-between;gap:8px;text-align:left;padding:10px 12px;border-radius:12px;color:var(--muted)}
 .nav:hover{background:var(--panel2);color:var(--text)}
-.nav.on{background:linear-gradient(90deg,#ff3d9a30,#7b5cff18);color:var(--text);font-weight:600}
+.nav.on{background:linear-gradient(90deg,color-mix(in srgb,var(--a1) 19%,transparent),color-mix(in srgb,var(--a2) 9%,transparent));color:var(--text);font-weight:600}
 .nav small{color:var(--muted)}
 .sec{display:flex;justify-content:space-between;align-items:center;padding:20px 12px 6px;color:var(--muted);font-weight:600}
-.sec button{font-size:18px;color:#fff;background:var(--grad);width:26px;height:26px;border-radius:50%;line-height:1}
+.sec button{font-size:18px;color:var(--on);background:var(--grad);width:26px;height:26px;border-radius:50%;line-height:1}
 main{grid-area:main;overflow:auto;padding:30px 36px}
 header{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:22px}
 .hd{display:flex;align-items:flex-end;gap:18px;min-width:0}
@@ -40,24 +40,24 @@ h1{margin:0;font-size:34px;letter-spacing:-.8px;line-height:1.1;overflow-wrap:an
 .actions{display:flex;gap:8px;flex-wrap:wrap}
 .btn{background:var(--panel2);padding:9px 16px;border-radius:999px;cursor:pointer;border:1px solid var(--line)}
 .btn:hover{border-color:var(--muted)}
-.btn.primary{background:var(--grad);border:0;color:#fff;font-weight:700;box-shadow:0 8px 22px #ff3d9a44}
-.btn.danger:hover{border-color:#ff6b6b;color:#ff9a9a}
+.btn.primary{background:var(--grad);border:0;color:var(--on);font-weight:700;box-shadow:0 8px 22px color-mix(in srgb,var(--a1) 27%,transparent)}
+.btn.danger:hover{border-color:#e5484d;color:#e5484d}
 #q{width:100%;max-width:400px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:10px 16px;margin-bottom:14px}
 .row{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:12px;padding:8px 10px;border-radius:14px;cursor:pointer}
 .row:hover{background:var(--panel)}
-.row.cur{background:linear-gradient(90deg,#ff3d9a26,#7b5cff12)}
-.row.cur .nm{color:#ff8fc4;font-weight:600}
+.row.cur{background:linear-gradient(90deg,color-mix(in srgb,var(--a1) 15%,transparent),color-mix(in srgb,var(--a2) 7%,transparent))}
+.row.cur .nm{color:var(--acct);font-weight:600}
 .idx{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--panel);color:var(--muted);font-size:13px}
-.row.cur .idx{background:var(--grad);color:#fff}
+.row.cur .idx{background:var(--grad);color:var(--on)}
 .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .more{color:var(--muted);padding:4px 12px;border-radius:8px;font-size:18px}
 .more:hover{background:var(--panel2);color:var(--text)}
 .empty{margin-top:60px;text-align:center;color:var(--muted)}
 .empty b{display:block;color:var(--text);font-size:20px;margin-bottom:6px}
-.bar{grid-area:bar;background:rgba(18,12,30,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr minmax(300px,2fr) 1fr;align-items:center;gap:16px;padding:12px 22px calc(12px + env(safe-area-inset-bottom,0px))}
+.bar{grid-area:bar;background:color-mix(in srgb,var(--pop) 85%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr minmax(300px,2fr) 1fr;align-items:center;gap:16px;padding:12px 22px calc(12px + env(safe-area-inset-bottom,0px))}
 .np{display:flex;align-items:center;gap:14px;min-width:0}
 .disc{flex:none;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle,var(--bg) 0 5px,#fff 6px 8px,transparent 9px),repeating-radial-gradient(circle,#0005 0 2px,transparent 2px 4px),conic-gradient(var(--a1),var(--a2),var(--a1),var(--a2),var(--a1))}
-.spin{animation:spin 3s linear infinite;box-shadow:0 0 22px #ff3d9a77}
+.spin{animation:spin 3s linear infinite;box-shadow:0 0 22px color-mix(in srgb,var(--a1) 47%,transparent)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.spin{animation:none}}
 .np div{min-width:0}
@@ -68,19 +68,19 @@ h1{margin:0;font-size:34px;letter-spacing:-.8px;line-height:1.1;overflow-wrap:an
 .ic{font-size:18px;width:40px;height:40px;border-radius:50%;color:var(--muted)}
 .ic:hover{color:var(--text)}
 .ic.on{color:var(--accent)}
-.ic.big{width:48px;height:48px;background:var(--grad);color:#fff;font-size:17px;box-shadow:0 8px 20px #ff3d9a55}
+.ic.big{width:48px;height:48px;background:var(--grad);color:var(--on);font-size:17px;box-shadow:0 8px 20px color-mix(in srgb,var(--a1) 33%,transparent)}
 .ic.big:hover{filter:brightness(1.12)}
 .seek{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
 .seek span{width:38px;text-align:center}
 input[type=range]{flex:1;accent-color:var(--accent);height:4px}
 .vol{display:flex;justify-content:flex-end;align-items:center;gap:8px}
 .vol input{max-width:120px}
-.menu{position:fixed;z-index:20;min-width:210px;max-width:280px;background:#1b1430;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 16px 40px #000a}
+.menu{position:fixed;z-index:20;min-width:210px;max-width:280px;background:var(--pop);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 16px 40px #000a}
 .menu button{display:block;width:100%;text-align:left;padding:9px 12px;border-radius:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .menu button:hover{background:var(--panel2)}
 .menu .lbl{padding:6px 12px;color:var(--muted);font-size:12px}
-.menu .dng{color:#ff9a9a}
-dialog{background:#1b1430;color:var(--text);border:1px solid var(--line);border-radius:18px;padding:22px;width:min(380px,90vw)}
+.menu .dng{color:#e5484d}
+dialog{background:var(--pop);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:22px;width:min(380px,90vw)}
 dialog::backdrop{background:#000b}
 dialog h3{margin:0 0 14px}
 dialog input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:16px}
@@ -88,6 +88,27 @@ dialog .actions{justify-content:flex-end}
 #toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30;font-weight:600}
 #toast.on{opacity:1}
 .drop{outline:3px dashed var(--accent);outline-offset:-12px}
+.sform{display:flex;gap:8px;margin-bottom:10px}
+#sq,#jkey{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:10px 16px}
+.chip{display:inline-flex;gap:6px;align-items:center;padding:6px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--line);margin:0 6px 8px 0;cursor:pointer;font-size:13px}
+.res{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:8px 10px;border-radius:14px}
+.res:hover{background:var(--panel)}
+.pv{width:40px;height:40px;border-radius:50%;background:var(--grad);color:var(--on)}
+.lic{display:block;color:var(--muted);font-size:11px;white-space:normal}
+details.key{margin-top:18px;color:var(--muted);font-size:13px}
+details.key p{margin:8px 0}
+details.key div{display:flex;gap:8px}
+#thm{width:min(420px,92vw)}
+#thmList{display:flex;flex-direction:column;gap:6px;max-height:34vh;overflow:auto;margin-bottom:14px}
+.tc{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;border:1px solid var(--line);cursor:pointer}
+.tc.on{border-color:var(--accent)}
+.tc b{flex:1;font-weight:500}
+.sw3{display:flex;gap:3px}
+.sw3 i{width:16px;height:16px;border-radius:50%;display:block;box-shadow:0 0 0 1px var(--line)}
+.ed p{margin:0 0 8px;color:var(--muted);font-size:12px}
+.cols{display:flex;gap:10px;margin-bottom:16px}
+.cols label{flex:1;display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+dialog input[type=color]{padding:2px;height:38px;margin-bottom:0;cursor:pointer}
 @media(max-width:760px){
  .app{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"side" "main" "bar";padding-top:env(safe-area-inset-top,0px)}
  aside{border-right:0;border-bottom:1px solid var(--line);padding:10px 8px}
@@ -113,8 +134,10 @@ dialog .actions{justify-content:flex-end}
   <div class="brand"><span class="logo"></span>Mexzyy<b>Free</b></div>
   <nav>
    <button class="nav" data-v="lib">Biblioteka <small id="cLib"></small></button>
+   <button class="nav" data-v="search">Szukaj muzyki</button>
    <div class="sec"><span>Playlisty</span><button id="newPl" title="Nowa playlista" aria-label="Nowa playlista">＋</button></div>
    <div id="pls" style="display:contents"></div>
+   <button class="nav" id="openThm" style="margin-top:14px">Motywy kolorów</button>
   </nav>
  </aside>
 
@@ -124,6 +147,7 @@ dialog .actions{justify-content:flex-end}
    <div class="actions">
     <button class="btn primary" id="playAll">▶ Odtwórz</button>
     <label class="btn">＋ Dodaj muzykę<input type="file" id="files" accept="audio/*" multiple hidden></label>
+    <label class="btn" id="folderBtn">＋ Dodaj folder<input type="file" id="folder" webkitdirectory multiple hidden></label>
     <button class="btn" id="ren">Zmień nazwę</button>
     <button class="btn danger" id="delPl">Usuń playlistę</button>
    </div>
@@ -149,6 +173,11 @@ dialog .actions{justify-content:flex-end}
 </div>
 
 <dialog id="dlg"><h3 id="dTitle"></h3><input id="dInput"><div class="actions"><button class="btn" id="dNo">Anuluj</button><button class="btn primary" id="dOk">OK</button></div></dialog>
+<dialog id="thm"><h3>Motywy kolorów</h3><div id="thmList"></div>
+<div class="ed"><p>Własny motyw: zmieniaj kolory, a podgląd działa od razu</p>
+<input id="tName" placeholder="Nazwa motywu" maxlength="30">
+<div class="cols"><label>Tło<input type="color" id="cBg"></label><label>Kolor 1<input type="color" id="cA1"></label><label>Kolor 2<input type="color" id="cA2"></label></div></div>
+<div class="actions"><button class="btn" id="tClose">Zamknij</button><button class="btn primary" id="tSave">Zapisz motyw</button></div></dialog>
 <div id="toast"></div>
 <audio id="audio" playsinline preload="auto"></audio>
 
@@ -188,6 +217,29 @@ let S = {};
 try { S = JSON.parse(localStorage.getItem('player-settings') || '{}'); } catch(e) {}
 const saveS = () => { try { localStorage.setItem('player-settings', JSON.stringify(S)); } catch(e) {} };
 
+/* ---------- Motywy kolorów ---------- */
+const PRESETS = [
+  {id:'neon', name:'Neonowy róż i fiolet', bg:'#0b0713', a1:'#ff3d9a', a2:'#7b5cff'},
+  {id:'blue', name:'Elektryczny niebieski', bg:'#070d1a', a1:'#2d7dff', a2:'#00e0ff'},
+  {id:'fire', name:'Ogień', bg:'#120a06', a1:'#ff5a1f', a2:'#ffb300'},
+  {id:'red', name:'Czerwień i czerń', bg:'#0e0709', a1:'#ff2d3d', a2:'#ff8a4c'},
+  {id:'light', name:'Jasny', bg:'#f7f4fd', a1:'#e5167f', a2:'#6a4bff'}
+];
+let customs = Array.isArray(S.themes) ? S.themes : [];
+let themeId = S.theme || 'neon';
+const allThemes = () => PRESETS.concat(customs);
+const findTheme = id => allThemes().find(t => t.id === id) || PRESETS[0];
+const lum = h => { const n = parseInt(h.slice(1), 16), f = c => { c /= 255; return c <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); };
+  return .2126 * f(n >> 16 & 255) + .7152 * f(n >> 8 & 255) + .0722 * f(n & 255); };
+function applyTheme(t) {
+  const st = document.documentElement.style;
+  st.setProperty('--bg', t.bg); st.setProperty('--a1', t.a1); st.setProperty('--a2', t.a2);
+  st.setProperty('--fg', lum(t.bg) < .4 ? '#f5f1ff' : '#1a1426');
+  st.setProperty('--on', (lum(t.a1) + lum(t.a2)) / 2 > .35 ? '#15101f' : '#ffffff');
+  document.querySelector('meta[name=theme-color]')?.setAttribute('content', t.bg);
+}
+applyTheme(findTheme(themeId));
+
 /* ---------- Stan ---------- */
 let tracks = [], playlists = [];
 let view = S.view || 'lib';
@@ -207,11 +259,20 @@ function viewTracks() {
 
 /* ---------- Widok ---------- */
 function render() {
-  if (view !== 'lib' && !curPl()) view = 'lib';
+  if (view !== 'lib' && view !== 'search' && !curPl()) view = 'lib';
   $('#cLib').textContent = tracks.length;
   $('#pls').innerHTML = playlists.map(p =>
     `<button class="nav ${view === 'p'+p.id ? 'on' : ''}" data-v="p${p.id}"><span>${esc(p.name)}</span><small>${p.ids.length}</small></button>`).join('');
   document.querySelector('[data-v="lib"]').classList.toggle('on', view === 'lib');
+  document.querySelector('[data-v="search"]').classList.toggle('on', view === 'search');
+  if (view === 'search') {
+    $('#title').textContent = 'Szukaj muzyki'; $('#sub').textContent = 'Darmowa muzyka na wolnych licencjach';
+    $('#cover').textContent = '♪'; $('#cover').style.setProperty('--h', 200);
+    $('#ren').style.display = $('#delPl').style.display = $('#playAll').style.display = $('#q').style.display = 'none';
+    if (!$('#sres')) buildSearch();
+    return;
+  }
+  $('#q').style.display = '';
 
   const pl = curPl(), list = viewTracks();
   $('#title').textContent = pl ? pl.name : 'Biblioteka';
@@ -223,7 +284,7 @@ function render() {
   $('#playAll').style.display = list.length ? '' : 'none';
 
   $('#list').innerHTML = list.length ? list.map((t, i) =>
-    `<div class="row ${t.id === curId ? 'cur' : ''}" data-id="${t.id}"><span class="idx">${t.id === curId && !audio.paused ? '▶' : i + 1}</span><span class="nm">${esc(t.name)}</span><button class="more" data-id="${t.id}" aria-label="Więcej">⋯</button></div>`).join('')
+    `<div class="row ${t.id === curId ? 'cur' : ''}" data-id="${t.id}"><span class="idx">${t.id === curId && !audio.paused ? '▶' : i + 1}</span><span class="nm">${esc(t.name)}${t.lic ? `<span class="lic">${esc(t.lic)}${t.online ? ' (strumień)' : ''}</span>` : ''}</span><button class="more" data-id="${t.id}" aria-label="Więcej">⋯</button></div>`).join('')
     : `<div class="empty"><b>${$('#q').value ? 'Brak wyników' : pl ? 'Ta playlista jest pusta' : 'Twoja biblioteka jest pusta'}</b>${pl ? 'Dodaj utwory przez menu ⋯ w bibliotece.' : 'Kliknij „Dodaj muzykę” albo przeciągnij tu pliki z komputera.'}</div>`;
 }
 
@@ -245,9 +306,9 @@ function playList(ids, startId) {
 function load() {
   const t = trackById(queue[order[pos]]);
   if (!t) return next(false);
-  if (curUrl) URL.revokeObjectURL(curUrl);
-  curUrl = URL.createObjectURL(t.blob);
-  audio.src = curUrl; curId = t.id;
+  if (curUrl) { URL.revokeObjectURL(curUrl); curUrl = null; }
+  if (t.blob) { curUrl = URL.createObjectURL(t.blob); audio.src = curUrl; } else audio.src = t.url;
+  curId = t.id;
   audio.play().catch(() => {});
   $('#npName').textContent = t.name;
   $('#npSub').textContent = view === 'lib' ? 'Biblioteka' : (curPl()?.name || '');
@@ -341,6 +402,8 @@ async function addFiles(files) {
   render(); toast(n ? `Dodano utworów: ${n}` : 'Nie dodano nowych utworów');
 }
 $('#files').onchange = e => { addFiles([...e.target.files]); e.target.value = ''; };
+$('#folder').onchange = e => { addFiles([...e.target.files]); e.target.value = ''; };
+if (!('webkitdirectory' in $('#folder'))) $('#folderBtn').style.display = 'none';
 ['dragover', 'dragleave', 'drop'].forEach(ev => document.addEventListener(ev, e => {
   e.preventDefault();
   $('#main').classList.toggle('drop', ev === 'dragover');
@@ -374,7 +437,7 @@ $('#q').oninput = render;
 
 /* ---------- Kliknięcia: nawigacja, lista, menu ---------- */
 document.querySelector('nav').addEventListener('click', e => {
-  const b = e.target.closest('.nav'); if (!b) return;
+  const b = e.target.closest('.nav'); if (!b || !b.dataset.v) return;
   view = b.dataset.v; S.view = view; saveS(); $('#q').value = ''; render();
 });
 $('#list').addEventListener('click', e => {
@@ -414,6 +477,113 @@ function openMenu(id, anchor) {
     }
   };
 }
+
+/* ---------- Wyszukiwarka darmowej muzyki (wolne licencje) ---------- */
+const ccLabel = u => { const m = String(u || '').match(/licenses\/([a-z-]+)\/([\d.]+)/i);
+  return m ? 'CC ' + m[1].toUpperCase() + ' ' + m[2] : /publicdomain|zero/i.test(u || '') ? 'Domena publiczna / CC0' : 'Creative Commons'; };
+const getJson = async url => { const r = await fetch(url); if (!r.ok) throw new Error('błąd ' + r.status); return r.json(); };
+const SOURCES = [
+  {id: 'jamendo', name: 'Jamendo', on: () => !!S.jamendo, async search(q) {
+    if (!S.jamendo) throw new Error('wpisz klucz Jamendo na dole strony');
+    const d = await getJson(`https://api.jamendo.com/v3.0/tracks/?client_id=${encodeURIComponent(S.jamendo)}&format=json&limit=15&audioformat=mp32&search=${encodeURIComponent(q)}`);
+    return (d.results || []).map(x => ({title: x.name, artist: x.artist_name, license: ccLabel(x.license_ccurl), url: x.audio}));
+  }},
+  {id: 'archive', name: 'Internet Archive', on: () => true, async search(q) {
+    const qq = `(${q}) AND mediatype:audio AND (licenseurl:*creativecommons* OR licenseurl:*publicdomain*)`;
+    const d = await getJson(`https://archive.org/advancedsearch.php?q=${encodeURIComponent(qq)}&fl[]=identifier&fl[]=title&fl[]=creator&fl[]=licenseurl&rows=15&output=json`);
+    return d.response.docs.map(x => ({title: x.title, artist: [].concat(x.creator || '').join(', '), license: ccLabel([].concat(x.licenseurl || '')[0]),
+      resolve: async () => { const m = await getJson(`https://archive.org/metadata/${x.identifier}`); const fs = m.files || [];
+        const f = fs.find(f => /\.mp3$/i.test(f.name)) || fs.find(f => /\.(ogg|flac)$/i.test(f.name));
+        if (!f) throw new Error('brak pliku audio'); return `https://archive.org/download/${x.identifier}/${encodeURIComponent(f.name)}`; }}));
+  }},
+  {id: 'commons', name: 'Wikimedia Commons', on: () => true, async search(q) {
+    const d = await getJson(`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent('filetype:audio ' + q)}&gsrnamespace=6&gsrlimit=15&prop=imageinfo&iiprop=url|extmetadata&format=json&origin=*`);
+    return Object.values(d.query?.pages || {}).map(x => { const i = x.imageinfo?.[0] || {}, m = i.extmetadata || {};
+      return {title: x.title.replace(/^File:/, '').replace(/\.[^.]+$/, ''), artist: (m.Artist?.value || '').replace(/<[^>]+>/g, '').trim(), license: m.LicenseShortName?.value || 'Wikimedia Commons', url: i.url}; }).filter(x => x.url);
+  }},
+  {id: 'ccmixter', name: 'ccMixter', on: () => true, async search(q) {
+    const d = await getJson(`https://ccmixter.org/api/query?f=json&limit=15&search_type=any&search=${encodeURIComponent(q)}`);
+    return (Array.isArray(d) ? d : []).map(x => { const f = (x.files || []).find(f => /mp3/i.test(f.download_url || '')) || (x.files || [])[0];
+      return f && {title: x.upload_name, artist: x.user_real_name || x.user_name, license: x.license_name || 'Creative Commons', url: f.download_url}; }).filter(Boolean);
+  }}
+];
+let results = [], pvAudio = new Audio(), pvBtn = null;
+const urlOf = async x => x.url || (x.url = await x.resolve());
+function buildSearch() {
+  $('#list').innerHTML = `<div class="sform"><input id="sq" type="search" placeholder="Wykonawca lub tytuł…"><button class="btn primary" id="sgo">Szukaj</button></div>
+  <div id="src">${SOURCES.map(x => `<label class="chip"><input type="checkbox" value="${x.id}" ${x.on() ? 'checked' : ''}> ${x.name}</label>`).join('')}</div>
+  <div id="sres"><p class="empty"><b>Wpisz, czego szukasz</b>Tylko muzyka na wolnych licencjach (Creative Commons i domena publiczna). Nie ma tu komercyjnych hitów.</p></div>
+  <details class="key"><summary>Klucz Jamendo (darmowy, potrzebny do Jamendo)</summary><p>Załóż konto na developer.jamendo.com, utwórz aplikację i wklej tu jej client_id.</p><div><input id="jkey" placeholder="client_id" value="${esc(S.jamendo || '')}"><button class="btn" id="jsave">Zapisz</button></div></details>`;
+}
+function renderResults() {
+  $('#sres').innerHTML = results.length ? results.map((x, i) => `<div class="res"><button class="pv" data-i="${i}" aria-label="Podgląd">▶</button><div style="min-width:0"><div class="nm">${esc(x.title)}</div><span class="lic">${esc(x.artist ? x.artist + ', ' : '')}${esc(x.license)} (${esc(x.src)})</span></div><button class="btn" data-add="${i}">＋ Dodaj</button></div>`).join('')
+    : '<p class="empty"><b>Brak wyników</b>Spróbuj innej frazy albo zaznacz więcej źródeł.</p>';
+}
+async function doSearch() {
+  const q = $('#sq').value.trim(); if (!q) return toast('Wpisz, czego szukasz');
+  const on = [...document.querySelectorAll('#src input:checked')].map(i => i.value);
+  if (!on.length) return toast('Zaznacz choć jedno źródło');
+  $('#sres').innerHTML = '<p class="empty">Szukam…</p>'; results = []; const errs = [];
+  await Promise.all(SOURCES.filter(x => on.includes(x.id)).map(async x => {
+    try { (await x.search(q)).forEach(r => results.push({...r, src: x.name})); } catch (err) { errs.push(x.name + ': ' + (err.message || 'brak odpowiedzi')); } }));
+  renderResults();
+  if (errs.length) $('#sres').insertAdjacentHTML('afterbegin', `<span class="lic">Nie odpowiedziały: ${esc(errs.join('; '))}</span>`);
+}
+async function addOnline(x) {
+  const name = (x.artist ? x.artist + ' - ' : '') + x.title;
+  if (tracks.some(t => t.name === name && t.src === x.src)) return toast('Ten utwór już jest w bibliotece');
+  toast('Dodaję…');
+  try {
+    const url = await urlOf(x); let blob = null;
+    try { const r = await fetch(url); if (r.ok) { blob = await r.blob(); if (!blob.size) blob = null; } } catch (e) {}
+    const t = {name, src: x.src, lic: x.license, added: Date.now(), ...(blob ? {blob, size: blob.size} : {url, online: true})};
+    t.id = await DB.put('tracks', t); tracks.push(t); render();
+    toast(blob ? 'Dodano do biblioteki (działa offline)' : 'Dodano jako strumień (wymaga internetu)');
+  } catch (e) { toast('Nie udało się dodać utworu'); }
+}
+$('#list').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id === 'sq') doSearch(); });
+$('#list').addEventListener('click', async e => {
+  const pv = e.target.closest('.pv'), add = e.target.closest('[data-add]');
+  if (e.target.closest('#jsave')) { S.jamendo = $('#jkey').value.trim(); saveS(); return toast('Zapisano klucz'); }
+  if (e.target.closest('#sgo')) return doSearch();
+  if (add) return addOnline(results[+add.dataset.add]);
+  if (pv) {
+    if (pvBtn === pv && !pvAudio.paused) { pvAudio.pause(); pv.textContent = '▶'; return; }
+    document.querySelectorAll('.pv').forEach(b => b.textContent = '▶'); audio.pause(); pvAudio.pause();
+    try { pvAudio.src = await urlOf(results[+pv.dataset.i]); await pvAudio.play(); pv.textContent = '⏸'; pvBtn = pv;
+      pvAudio.onended = () => { pv.textContent = '▶'; }; } catch (err) { toast('Nie udało się odtworzyć podglądu'); }
+  }
+});
+
+/* ---------- Okno motywów ---------- */
+const thm = $('#thm');
+const edTheme = () => ({bg: $('#cBg').value, a1: $('#cA1').value, a2: $('#cA2').value});
+function setEditor(t) { $('#cBg').value = t.bg; $('#cA1').value = t.a1; $('#cA2').value = t.a2; $('#tName').value = ''; }
+function drawThemes() {
+  $('#thmList').innerHTML = allThemes().map(t => `<div class="tc ${t.id === themeId ? 'on' : ''}" data-id="${esc(t.id)}"><span class="sw3"><i style="background:${t.bg}"></i><i style="background:${t.a1}"></i><i style="background:${t.a2}"></i></span><b>${esc(t.name)}</b>${customs.includes(t) ? `<button class="more" data-del="${esc(t.id)}" aria-label="Usuń motyw">✕</button>` : ''}</div>`).join('');
+}
+function saveTheme() { S.theme = themeId; S.themes = customs; saveS(); }
+$('#openThm').onclick = () => { setEditor(findTheme(themeId)); drawThemes(); thm.showModal(); };
+$('#tClose').onclick = () => thm.close();
+thm.addEventListener('close', () => applyTheme(findTheme(themeId)));
+['#cBg', '#cA1', '#cA2'].forEach(id => $(id).addEventListener('input', () => applyTheme(edTheme())));
+$('#thmList').addEventListener('click', e => {
+  const del = e.target.closest('[data-del]');
+  if (del) {
+    customs = customs.filter(t => t.id !== del.dataset.del);
+    if (themeId === del.dataset.del) themeId = 'neon';
+    saveTheme(); applyTheme(findTheme(themeId)); return drawThemes();
+  }
+  const row = e.target.closest('.tc'); if (!row) return;
+  themeId = row.dataset.id; saveTheme();
+  const t = findTheme(themeId); applyTheme(t); setEditor(t); drawThemes();
+});
+$('#tSave').onclick = () => {
+  const name = $('#tName').value.trim();
+  if (!name) { toast('Wpisz nazwę motywu'); $('#tName').focus(); return; }
+  const t = {id: 'c' + Date.now(), name, ...edTheme()};
+  customs.push(t); themeId = t.id; saveTheme(); applyTheme(t); drawThemes(); toast(`Zapisano motyw „${name}”`);
+};
 
 /* ---------- Start ---------- */
 (async () => {
